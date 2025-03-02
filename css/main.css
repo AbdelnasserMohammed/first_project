@@ -1,0 +1,237 @@
+/*START OF VARIABLE DECLERATIONS */
+:root {
+    --main-color: #E65F78;
+    --section-bg: #F1F1F1;
+    --duration: 0.3s;
+}
+
+/*END   OF VARIABLE DECLERATIONS */
+/*START OF GLOBAL STYLES */
+body {
+    font-family: "Nunito Sans", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat", sans-serif;
+}
+.text-main {
+    color: var(--main-color);
+}
+.bg-main {
+    background-color: var(--section-bg);
+}
+.w-max {
+    max-width: 500px;
+    margin: 0 auto;
+}
+.w-48 {
+    width: 48%;
+}
+.w-global {
+    max-width: 450px;
+    margin: 0 auto;
+}
+/*END   OF GLOBAL STYLES */
+
+/*START OF NAVIGATION BAR*/
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px 0;
+}
+.navbar .navbar-nav li a{
+    color: white;
+}
+.navbar .navbar-nav .nav-link.active {
+    color: var(--main-color);
+}
+.navbar .navbar-nav li:hover a {
+    color: var(--main-color);
+}
+.section-spacing {
+    padding: 80px 0;
+}
+/*END   OF NAVIGATION BAR*/
+
+/*START OF LANDING PAGE*/
+.header {
+    background-image: url(../images/header-bg.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.header .container {
+    padding-top: 70px;
+}
+.header .btn-custom {
+    border: 1px solid white;
+    padding: 16px 48px;
+    color: white;
+    text-decoration: none;
+    text-transform: capitalize;
+    display: inline-block;
+    transition: all var(--duration) ease;
+}
+.header .btn-custom:hover {
+    border: none;
+    background-color: white;
+    color: black;
+}
+.header .settings {
+    position: fixed;
+    top: 30%;
+    left: 0;
+    background-color: #333;
+    width: 40px;
+    height: 40px;
+    z-index: 10;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.header h2::after {
+    content: "";
+    animation: type-writer 5s infinite;
+}
+.header .pill {
+    width: 40px;
+    height: 80px;
+    border: 1.5px solid white;
+    position: absolute;
+    left: 50%;
+    border-radius: 40px;
+    transform: translateX(-50%);
+    bottom: 30px;
+    animation-name: jump;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+.header .pill::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 10px;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+}
+/*END   OF LANDING PAGE*/
+
+/*START OF ABOUT SECTION*/
+.about ul li {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #CCC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about ul li a {
+    color: #212529;
+}
+/*END   OF ABOUT SECTION*/
+
+/*START OF CLIENT SECTION*/
+.client .container .slider i {
+    font-size: 55px;
+}
+.client .carousel-indicators [data-bs-target] {
+    background-color: #bb7b87;
+    width: 30px;
+    height: 6px;
+    border-radius: 35%;
+}
+.client .carousel-indicators .active {
+    background-color: var(--main-color);
+}
+/*END   OF CLIENT SECTION*/
+
+/*START OF PORTFOLIO SECTION*/
+.portfolio .item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: all var(--duration) ease;
+    z-index: 1;
+}
+.portfolio .item img {
+    transition: transform var(--duration) ease;
+}
+.portfolio .item:hover img {
+    transform: scale(1.5);
+}
+.portfolio .item:hover::before {
+    opacity: 1;
+}
+.portfolio .item:hover .content {
+    top: 0;
+    z-index: 1;
+}
+.portfolio .item .content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: all var(--duration) ease;
+}
+.portfolio .nav-tabs {
+    border: none;
+}
+.portfolio .nav-tabs .nav-link.active {
+    background-color: var(--main-color);
+    color: white;
+    border-radius: 10px;
+}
+.portfolio .nav-tabs .nav-link {
+    color: black;
+    border: none;
+}
+.portfolio .nav-tabs .nav-item button {
+    text-transform: uppercase;
+}
+/*END   OF PORTFOLIO SECTION*/
+
+/*START OF BLOG SECTION */
+.blog .card {
+    border: none;
+}
+/*END   OF BLOG SECTION */
+
+/*START OF CONTACT SECTION*/
+.contact i {
+    font-size: 55px;
+}
+.contact .item {
+    border-radius: 5px;
+}
+.contact .form-control:focus {
+    border-color: var(--main-color);
+    box-shadow: none;
+}
+.contact textarea {
+    resize: vertical;
+}
+.contact .btn-form {
+    padding: 16px 24px;
+    background-color: var(--main-color);
+    color: white;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 5px;
+    width: fit-content;
+    margin-left: auto;
+}
+/*END   OF CONTACT SECTION*/
